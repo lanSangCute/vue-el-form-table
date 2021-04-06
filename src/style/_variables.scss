@@ -1,0 +1,57 @@
+// 简称
+$short-style:(
+    t:top,
+    b:bottom,
+    l:left,
+    r:right
+);
+
+// border宽度
+$border-style:
+1,2,3,4,
+;
+
+$overflow:
+visible,
+hidden,
+scroll,
+auto,
+inherit,
+;
+
+$direction:
+left,
+right,
+center,
+;
+
+$textDecoration:
+none,
+underline,
+overline,
+line-through,
+blink,
+inherit,
+;
+
+$position:
+absolute,
+fixed,
+relative,
+static,
+inherit,
+;
+
+$flexPosition:(
+    stretch:stretch,
+    start:flex-start,
+    end:flex-end,
+    center:center,
+    between:space-between,
+    around:space-around,
+);
+
+$flexDirection:
+column,
+row
+;

@@ -1,0 +1,33 @@
+{
+  "name": "schedule-component",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "dev": "npm run serve",
+    "build": "vue-cli-service build",
+    "build:lib": "vue-cli-service build --target lib --name lanjVue src/index.ts"
+  },
+  "dependencies": {
+    "core-js": "^3.4.4",
+    "element-ui": "^2.14.1",
+    "lodash": "^4.17.20",
+    "lodash.debounce": "^4.0.8",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-property-decorator": "^8.3.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-typescript": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "typescript": "~3.5.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

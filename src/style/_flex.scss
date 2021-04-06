@@ -1,0 +1,40 @@
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.flex-ju {
+    @each $key,$val in $flexPosition {
+        &-#{$key} {
+            @extend .flex;
+            justify-content: $val;
+        }
+        &-al-#{$key} {
+            @extend .flex;
+            justify-content: $val;
+            align-items: $val;
+        }
+    }
+}
+
+.flex-al {
+    @each $key,$val in $flexPosition {
+        &-#{$key} {
+            @extend .flex;
+            align-items: $val;
+        }
+    }
+}
+
+@each $key in $flexDirection {
+    .flex-#{$key} {
+        @extend .flex;
+        flex-direction: $key;
+    }
+}
+
+
+
+
+

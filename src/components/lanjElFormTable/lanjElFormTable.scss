@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+.component-configFilterTable {
+    .title {
+        margin: 0 0 12px 0;
+        font-weight: bold;
+    }
+
+    .top-opertaions-container {
+        direction: row;
+        .left-operations-container {
+            min-width: 10px;
+            min-height: 32px;
+        }
+        .right-operations-container {
+            min-width: 10px;
+            min-height: 32px;
+        }
+    }
+
+    .tip-container {
+        background-color: #ebf5ff;
+        padding: 7px 14px;
+        .tip-icon {
+            vertical-align: middle;
+        }
+        .tip-text {
+            font-size: 13px;
+            vertical-align: middle;
+        }
+    }
+}
+
+.form-input-number{
+    ::v-deep{
+        .el-input-number{
+            input{
+                text-align: left;
+            }
+        }
+    }
+}

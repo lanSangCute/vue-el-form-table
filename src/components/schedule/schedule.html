@@ -1,0 +1,110 @@
+
+  <div>
+    <header>
+        
+    </header>
+    <main>
+<!--      <div class="header">-->
+<!--        <div></div>-->
+<!--        <div v-for="i in xList" :key="i.index">-->
+<!--          {{i.title}}-->
+<!--        </div>-->
+<!--      </div>-->
+        <div class="body">
+            <div class="body-left">
+                <header class="header-td not-border">
+
+                </header>
+                <div class="signal-wrapper">
+                    <div ref="signal" class="signal" :style="{height:bodyHeight+'px'}">
+                        <span class="signal-item"
+                            v-for="i in signalList"
+                            :key="i.value"
+                            :style="{left:0,top:i.top+'px'}"
+                        >
+                            {{convert(i.value)}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="body-right">
+                <header class="header">
+
+                </header>
+<!--            y    base line-->
+                <span class="draw-line"
+                            v-for="line in drawLines"
+                            :key="line"
+                            :style="{left:0,top:line+'px'}"
+                />
+                <div class="palette-wrapper" ref="palette_wrapper">
+
+                    <div ref="palette" class="palette">
+                        <div
+                            class="palette-item"
+                            v-for="(paletteItem,index) in paletteItemList" :key='paletteItem.index'>
+                            <header class="header-td" :class="{'not-border':index===paletteItemList.length-1}">
+                                {{paletteItem.title}}
+                            </header>
+                            <div class="palette-item-content" :style="{height:bodyHeight+'px'}">
+                                <div
+
+                                    class="draw-card"
+                                    v-for="(item,index) in paletteItem.items"
+                                    :key='index'
+                                    :style="{
+                                        left:0,top:item.startPixel+'px',height:item.endPixel-item.startPixel+'px'
+                                    }"
+                                >
+                                    <div
+                                        @mouseenter="cardEnter(item,$event)"
+                                        @mouseleave="cardLeave(item,$event)"
+                                        @click="cardClick(item,$event)"
+                                        :style="{
+                                         backgroundColor:item.color, //兼容ie
+                                         color:item.colorDeep
+                                        }"
+                                        class="article-wrap"
+                                    >
+                                        <div>
+                                            <header class="schedule-title">{{item.title}}</header>
+                                            <div 
+                                                v-for="(list,index) in item.titleItem"
+                                                :key="list.index"
+                                                @click="cardItemClick(list,$event)"
+                                                class="schedule-title schedule-titleitem">
+                                                {{list.title}}
+                                            </div>
+                                            <div class="content" v-if="item.content" :style="{color:item.colorDes}">
+                                                {{item.content}}
+                                            </div>
+                                        </div>
+                                        <div class="hover-card"
+                                            :style="{
+                                                backgroundColor:item.colorDeep
+                                            }"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--                锚点-->
+                 <div :class="{hidden:!showRemind}" class="remind-wrapper" :style="{top:remindStartY+'px'}">
+                    <label>{{remindStartValue}}</label>
+                    <div></div>
+                </div>
+
+                <div :class="{hidden:!showRemind}" class="remind-wrapper" :style="{top:remindEndY+'px'}">
+                    <label>{{remindEndValue}}</label>
+                    <div></div>
+                </div>
+                <div class="remind-wrapper" :style="{top:remindConverseY+'px',}" style="backgroundColor:red;">
+                    <label style="color:red">{{remindConverseValue}}</label>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </main>
+  </div>

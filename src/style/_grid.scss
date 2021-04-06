@@ -1,0 +1,114 @@
+@for $i from 1 through 12{
+  .col-#{$i}{
+    @include get-col($i);
+  }
+}
+//pc端文字大小
+@for $i from 12 through 36{
+    .pc-text-#{$i}{
+        font-size: $i + px;
+    }
+}
+
+// 基本字体大小
+@for $i from 20 through 260{
+  $size:0.01*$i;
+  .text-#{$i}{
+      font-size: $size + rem;
+  }
+  .l-h-#{$i}{
+      line-height:$size + rem,
+  }
+  .hei-#{$i}{
+      height:$size + rem;
+  }
+  .wid-#{$i}{
+      width:$size + rem;
+  }
+  .lh-#{$i}{
+      height:$size + rem;
+      line-height:$size + rem,
+  }
+  .wh-#{$i}{
+      height:$size + rem;
+      width:$size + rem;
+  }
+  .line-h-#{$i}{
+    line-height:$size + rem,
+}
+}
+
+@for $i from 1 through 4{
+  .clamp-#{$i} {
+      -webkit-line-clamp: #{$i};
+  }
+}
+
+@for $i from 0 through 99 {
+    @each $sKey, $sVal in $short-style {
+      .p#{$sKey}-#{$i} {
+          padding-#{$sVal}: #{$i}px;
+      }
+      .px-#{$i}{
+          padding-left: #{$i}px;
+          padding-right: #{$i}px;
+      }
+      .py-#{$i}{
+          padding-top: #{$i}px;
+          padding-bottom: #{$i}px;
+      }
+      .p-#{$i}{
+          padding:#{$i}px;
+      }
+      .m#{$sKey}-#{$i} {
+          margin-#{$sVal}: #{$i}px;
+      }
+      .mx-#{$i}{
+          margin-left: #{$i}px;
+          margin-right: #{$i}px;
+      }
+      .my-#{$i}{
+          margin-top: #{$i}px;
+          margin-bottom: #{$i}px;
+      }
+      .m-#{$i}{
+          margin:#{$i}px;
+      }
+      .left-#{$i}{
+        left:#{$i}px;
+      }
+      .right-#{$i}{
+          right:#{$i}px;
+      }
+      .top-#{$i}{
+          top:#{$i}px;
+      }
+      .bottom-#{$i}{
+          bottom:#{$i}px;
+      }
+    }
+}
+@each $sKey in $overflow {
+  .of-#{$sKey} {
+      overflow: $sKey;
+  }
+}
+@each $sKey in $direction {
+  .text-align-#{$sKey} {
+      text-align: $sKey;
+  }
+  .float-#{$sKey} {
+    float: $sKey;
+}
+}
+@each $sKey in $textDecoration {
+  .text-dc-#{$sKey} {
+    text-decoration: $sKey;
+  }
+}
+@each $sKey in $position {
+  .#{$sKey} {
+    position: $sKey;
+  }
+}
+
